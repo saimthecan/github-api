@@ -18,14 +18,14 @@ function getData(e){
     let username = nameInput.value.trim();
 
     if (username === ""){
-        alert("Lütfen geçerli bir kullanıcı adı girin.");
+        alert("Please enter a username");
     }
     else {
 
         github.getGithubData(username)
         .then(response =>{
             if (response.user.message === "Not Found"){
-                ui.showError("Kullanıcı Bulunamadı");
+                ui.showError("User Not Found");
             }
             else {
                 ui.addSearchedUserToUI(username);
@@ -42,7 +42,7 @@ function getData(e){
 }
 function clearAllSearched(){
     
-    if (confirm("Emin misiniz ?")){
+    if (confirm("Are U Sure ?")){
         Storage.clearAllSearchedUsersFromStorage(); 
         ui.clearAllSearchedFromUI();
     }
