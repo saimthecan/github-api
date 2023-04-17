@@ -1,6 +1,6 @@
 # Github Api
 
-Sample web app, created by HTML, CSS, JavaScript Demonstrating todo list, adding and removing items to it.
+Sample web application created with HTML, CSS, JavaScript. View profile information and repo information of Github users
 
 ## Features
 
