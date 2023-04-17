@@ -6,7 +6,13 @@ class UI {
         this.inputField = document.getElementById("githubname");
         this.cardBody = document.querySelector(".card-body");
         this.repoSection = document.getElementById("repos");
+        this.recentSearchesContainer = document.getElementById("recent-searches-container");
     }
+    
+  hideLatestRepos() {
+    const latestReposHeading = document.getElementById('latest-repos-heading');
+    latestReposHeading.classList.add('hidden');
+  }
 
     resetUI() {
         this.profileDiv.innerHTML = '';
@@ -134,9 +140,10 @@ class UI {
             li.textContent = username;
 
             this.lastUsers.appendChild(li);
+           
 
         }
-       
+        this.showRecentSearches();
 
     }
     clearAllSearchedFromUI(){
@@ -146,4 +153,25 @@ class UI {
         }
 
     }
+    hideRecentSearches() {
+        this.recentSearchesContainer.classList.add("hidden");
+    }
+    
+    showRecentSearches() {
+        this.recentSearchesContainer.classList.remove("hidden");
+    }
+    deleteSearchedUserFromUI(username) {
+        const items = document.querySelectorAll("#last-users li");
+        items.forEach(item => {
+          if (item.textContent.includes(username)) {
+            item.remove();
+          }
+        });
+      }
+
+      showLatestRepos() {
+        const latestReposHeading = document.getElementById('latest-repos-heading');
+        latestReposHeading.classList.remove('hidden');
+      }
+
 }

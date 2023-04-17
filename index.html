@@ -16,6 +16,8 @@
     .hidden {
         display: none;
     }
+
+
     </style>
 </head>
 <body>
@@ -107,16 +109,14 @@
                 </div> -->
                 
             </div>
-
-            <h3 class="page-heading mb-3 hidden" id="recent-searches-heading">Recent Searches</h3>
-            <div id="lastSearch" class="hidden" style="margin-bottom: 100px;">
-            
-        
-                <ul class ="list-group" id = "last-users">
-                 
-                </ul>
-                <hr>
-                <button id ="clear-last-users" class="btn btn-dark">Clear Recent Search</button>
+            <div id="recent-searches-container" class="hidden" style="margin-left: 5rem;">
+                <h3 class="page-heading mb-3">Recent Searches</h3>
+                <ul class="list-group" id="last-users" style="width: 20rem;"></ul>
+                <button class="btn btn-danger btn-block mb-4" id="clear-last-users" style="width: 20rem">Clear Recent Searches</button>
+                
+              </div>
+              
+               
                 
             </div>
                 

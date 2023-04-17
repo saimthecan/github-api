@@ -34,4 +34,13 @@ class Storage {
         localStorage.removeItem("searched");
     }
 
+    static deleteSearchedUserFromStorage(username) {
+        let users = this.getSearchedUsersFromStorage();
+        const index = users.indexOf(username);
+        if (index > -1) {
+          users.splice(index, 1);
+        }
+        localStorage.setItem("searched", JSON.stringify(users));
+      }
+
 }
