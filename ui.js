@@ -5,12 +5,20 @@ class UI {
         this.lastUsers = document.getElementById("last-users");
         this.inputField = document.getElementById("githubname");
         this.cardBody = document.querySelector(".card-body");
+        this.repoSection = document.getElementById("repos");
+    }
+
+    resetUI() {
+        this.profileDiv.innerHTML = '';
+        this.repoDiv.innerHTML = '';
+        this.repoDiv.style.display = "none";
     }
     clearInput(){
         this.inputField.value = "";
 
     }
     showUserInfo(user){
+      
         this.profileDiv.innerHTML = `
         
         <div class="card card-body mb-3">
@@ -60,6 +68,7 @@ class UI {
     }
 
     showError(message) {
+        this.resetUI();
         const div = document.createElement("div");
 
         div.className = "alert alert-danger";
@@ -67,12 +76,16 @@ class UI {
 
         this.cardBody.appendChild(div);
 
+       
+       
+
         setTimeout(()=>{
             div.remove();
         },2000);
 
     }
     showRepoInfo(repos){
+        this.repoDiv.style.display = "block";
 
         this.repoDiv.innerHTML = "";
 
@@ -114,7 +127,7 @@ class UI {
 
         if (users.indexOf(username) === -1) {
          
-
+          
             const li = document.createElement("li");
 
             li.className = "list-group-item";
@@ -123,9 +136,7 @@ class UI {
             this.lastUsers.appendChild(li);
 
         }
-        /*
-
-        */
+       
 
     }
     clearAllSearchedFromUI(){

@@ -12,6 +12,10 @@
     .borderzero {
         border: 0 none;
     }
+    
+    .hidden {
+        display: none;
+    }
     </style>
 </head>
 <body>
@@ -79,8 +83,8 @@
 
 
             
-            <h3 class="page-heading mb-3">Latest repos</h3>
-            <div id="repos">
+            <h3 class="page-heading mb-3 hidden" id="latest-repos-heading">Latest repos</h3>
+            <div id="repos" class="hidden"></div>
                  
                  <!-- <div class="mb-2 card-body">
                     <div class="row">
@@ -104,11 +108,12 @@
                 
             </div>
 
-            <h3 class="page-heading mb-3">Recent Searches</h3>
+            <h3 class="page-heading mb-3 hidden" id="recent-searches-heading">Recent Searches</h3>
+            <div id="lastSearch" class="hidden" style="margin-bottom: 100px;">
             
-            <div id="lastSearch" style ="margin-bottom: 100px;">
+        
                 <ul class ="list-group" id = "last-users">
-                    <!-- <li class="list-group-item">asdaskdjkasjkşdjşasjd</li> -->
+                 
                 </ul>
                 <hr>
                 <button id ="clear-last-users" class="btn btn-dark">Clear Recent Search</button>
